@@ -1,5 +1,5 @@
 //
-//  BpiHistoryResponse.swift
+//  BitcoinPriceIndex.swift
 //  CoinDeskProvider
 //
 //  Created by Vladimir Abramichev on 22/07/2018.
@@ -8,7 +8,9 @@
 
 import Foundation
 
-public struct BpiHistoryResponse : Codable {
-    let timestamp: Date
-    let records: [BitcoinPriceIndexHistoryRecord]
+struct Currency : Codable {
+	let code : String
+	let rate : String
+	let description : String
+	let rate_float : Double
 }

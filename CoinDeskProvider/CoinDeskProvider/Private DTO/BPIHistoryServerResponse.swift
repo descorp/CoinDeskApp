@@ -1,5 +1,5 @@
 //
-//  Parser.swift
+//  BitcoinPriceIndex.swift
 //  CoinDeskProvider
 //
 //  Created by Vladimir Abramichev on 22/07/2018.
@@ -8,6 +8,8 @@
 
 import Foundation
 
-protocol Parser {
-    func parse<T>(data: Data) -> Response<T>
+struct BPIHistoryServerResponse : Codable {
+    let bpi : [String: Double]
+	let disclaimer : String?
+	let time : Time
 }

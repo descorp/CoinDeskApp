@@ -9,7 +9,21 @@
 import Foundation
 
 public enum CoilDeskProviderError : Error {
-    case notCorrectResponce
+    case incorrectResponce
+    case parsingError
+    case incorrectData
+    
+    
+    var localizedDescription: String {
+        switch self {
+        case .incorrectResponce:
+            return "Incorrect responce"
+        case .parsingError:
+            return "Not able to parse"
+        case .incorrectData:
+            return "Incorrect data in responce"
+        }
+    }
 }
 
 enum API {
@@ -19,7 +33,7 @@ enum API {
     case getBpi(currency: String?)
     case getHistory(from: Date, to: Date, currency: String?)
     
-    func request<T>(callback: @escaping (Response<T>) -> Void) {
+    func request<T: Codable>(callback: @escaping (Response<T>) -> Void) {
         let url = API.coinDeskUrl.appendingPathComponent(self.path)
         URLSession.shared.dataTask(with: url, completionHandler: { (data, responce, error) in
             if let error = error {
@@ -30,11 +44,11 @@ enum API {
             guard
                 let data = data
             else {
-                callback(.failure(CoilDeskProviderError.notCorrectResponce))
+                callback(.failure(CoilDeskProviderError.incorrectResponce))
                 return
             }
             
-            let result: Response<T> = self.parser.parse(data: data)
+            let result: Response<T> = self.parse(data: data)
             callback(result)
         })
     }
@@ -52,12 +66,12 @@ enum API {
         }
     }
     
-    var parser: Parser {
+    private func parse<T>(data: Data) -> Response<T> {
         switch self {
         case .getBpi:
-            return BpiParser()
+            return BpiParser().parse(data: data) as! Response<T>
         case .getHistory:
-            return BpiHistoryParser()
+            return BpiHistoryParser().parse(data: data) as! Response<T>
         }
     }
 }

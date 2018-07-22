@@ -16,6 +16,32 @@ extension Date {
     
     var isoDateString: String {
         let date = gregorian.dateComponents([.year, .month, .day], from: self)
-        return "\(date.year!)-\(date.month!)-\(date.day!)"
+        return "\(String(format: "%04d", date.year!))-\(String(format: "%02d", date.month!))-\(String(format: "%02d", date.day!))"
+    }
+    
+    init?(isoString string:String) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        
+        if let date = formatter.date(from: string) {
+            self = date
+        } else {
+            return nil
+        }
+    }
+    
+    init?(dateString string:String) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        
+        if let date = formatter.date(from: string) {
+            self = date
+        } else {
+            return nil
+        }
     }
 }

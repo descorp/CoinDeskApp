@@ -8,26 +8,26 @@
 
 import Foundation
 
-public enum Response<T> {
-    case success(result: T)
+public enum Response<T: Codable> {
+    case success(result: BpiResponse<T>)
     case failure(Error)
 }
 
 public class CoinDeskProvider {
     
-    public static func getCurrentBpi(callback: @escaping (Response<BpiResponse>) -> Void) {
+    public static func getCurrentBpi(callback: @escaping (Response<BitcoinPriceIndex>) -> Void) {
         API.getBpi(currency: nil).request(callback: callback)
     }
     
-    public static func getCurrentBpi(currency: String, callback: @escaping (Response<BpiResponse>) -> Void) {
+    public static func getCurrentBpi(currency: String, callback: @escaping (Response<BitcoinPriceIndex>) -> Void) {
         API.getBpi(currency: currency).request(callback: callback)
     }
     
-    public static func getHistoricalBpi(from: Date, to: Date, currency: String, callback: @escaping (Response<BpiHistoryResponse>) -> Void) {
+    public static func getHistoricalBpi(from: Date, to: Date, currency: String, callback: @escaping (Response<BitcoinPriceIndexHistoryRecord>) -> Void) {
         API.getHistory(from: from, to: to, currency: currency).request(callback: callback)
     }
     
-    public static func getHistoricalBpi(from: Date, to: Date, callback: @escaping (Response<BpiHistoryResponse>) -> Void) {
+    public static func getHistoricalBpi(from: Date, to: Date, callback: @escaping (Response<BitcoinPriceIndexHistoryRecord>) -> Void) {
         API.getHistory(from: from, to: to, currency: nil).request(callback: callback)
     }
 }

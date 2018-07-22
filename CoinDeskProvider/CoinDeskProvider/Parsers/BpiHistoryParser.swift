@@ -8,10 +8,26 @@
 
 import Foundation
 
-class BpiHistoryParser : Parser {
-    func parse<BpiHistoryResponse>(data: Data) -> Response<BpiHistoryResponse> {
+class BpiHistoryParser {
+    
+    func parse(data: Data) -> Response<BitcoinPriceIndexHistoryRecord> {
+        guard
+            let raw = try? JSONDecoder().decode(BPIHistoryServerResponse.self, from: data)
+            else {
+                return .failure(CoilDeskProviderError.parsingError)
+        }
         
+        guard
+            let timestamp = Date(isoString: raw.time.updatedISO)
+            else {
+                return .failure(CoilDeskProviderError.incorrectData)
+        }
         
-        return .failure(CoilDeskProviderError.notCorrectResponce)
+        let collection = raw.bpi.map({ (key, item) -> BitcoinPriceIndexHistoryRecord in
+            let value = Decimal(10000*item) / 10000
+            return BitcoinPriceIndexHistoryRecord(date: Date(dateString: key)!, value: value)
+        })
+        let result = BpiResponse(timestamp: timestamp, bpi: collection)
+        return .success(result: result)
     }
 }
