@@ -22,4 +22,7 @@ class DateExtensionTests: XCTestCase {
         XCTAssertEqual(date2.isoDateString, "2013-04-29")
     }
     
+    func testsDateInitiatedFromIsoString() {
+        XCTAssertEqual(Date(isoString: "2017-09-06T00:03:00+00:00")!.description, "2017-09-06 00:03:00 +0000")
+    }
 }

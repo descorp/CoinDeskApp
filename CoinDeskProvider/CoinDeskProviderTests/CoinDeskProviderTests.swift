@@ -15,14 +15,14 @@ class ParsersTests: XCTestCase {
         let path = Bundle(for: type(of: self)).path(forResource: "bpi", ofType: ".json")
         let data = FileManager.default.contents(atPath: path!)!
         
-        let result: Response<BpiResponse> = BpiParser().parse(data: data)
+        let result: Response<BitcoinPriceIndex> = BpiParser().parse(data: data)
         
         XCTAssertNotNil(result)
         
         switch result {
         case .success(let object):
             XCTAssertNotNil(object)
-            XCTAssertEqual(object.timestamp.description, "2018-07-22T16:14:00+00:00")
+            XCTAssertEqual(object.timestamp.description, "2018-07-22 16:14:00 +0000")
             XCTAssertNotNil(object.bpi)
             XCTAssertTrue(object.bpi.count > 0)
             XCTAssertEqual(object.bpi[0].code, "USD")
@@ -36,18 +36,18 @@ class ParsersTests: XCTestCase {
         let path = Bundle(for: type(of: self)).path(forResource: "bpi_history", ofType: ".json")
         let data = FileManager.default.contents(atPath: path!)!
         
-        let result: Response<BpiHistoryResponse> = BpiParser().parse(data: data)
+        let result: Response<BitcoinPriceIndexHistoryRecord> = BpiHistoryParser().parse(data: data)
         
         XCTAssertNotNil(result)
         
         switch result {
         case .success(let object):
             XCTAssertNotNil(object)
-            XCTAssertEqual(object.timestamp.description, "2018-07-22T16:14:00+00:00")
-            XCTAssertNotNil(object.records)
-            XCTAssertTrue(object.records.count > 0)
-            XCTAssertEqual(object.records[0].date.description, "2018-07-22")
-            XCTAssertEqual(object.records[0].value.description, "7510.5863")
+            XCTAssertEqual(object.timestamp.description, "2017-09-06 00:03:00 +0000")
+            XCTAssertNotNil(object.bpi)
+            XCTAssertTrue(object.bpi.count > 0)
+            XCTAssertEqual(object.bpi[0].date.description, "2017-09-01 00:00:00 +0000")
+            XCTAssertEqual(object.bpi[0].value.description, "4173.6334")
         case .failure(let error):
             XCTFail("Error: \(error)")
         }
@@ -57,7 +57,7 @@ class ParsersTests: XCTestCase {
         let path = Bundle(for: type(of: self)).path(forResource: "invalid", ofType: ".json")
         let data = FileManager.default.contents(atPath: path!)!
         
-        let result: Response<BpiHistoryResponse> = BpiParser().parse(data: data)
+        let result: Response<BitcoinPriceIndexHistoryRecord> = BpiHistoryParser().parse(data: data)
         
         XCTAssertNotNil(result)
         
@@ -77,7 +77,7 @@ class ParsersTests: XCTestCase {
         let path = Bundle(for: type(of: self)).path(forResource: "invalid", ofType: ".json")
         let data = FileManager.default.contents(atPath: path!)!
         
-        let result: Response<BpiResponse> = BpiParser().parse(data: data)
+        let result: Response<BitcoinPriceIndex> = BpiParser().parse(data: data)
         
         XCTAssertNotNil(result)
         
