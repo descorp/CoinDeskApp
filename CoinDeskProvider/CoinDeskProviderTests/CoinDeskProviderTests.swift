@@ -9,28 +9,87 @@
 import XCTest
 @testable import CoinDeskProvider
 
-class CoinDeskProviderTests: XCTestCase {
+class ParsersTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testBpiParserCanParse() {
+        let path = Bundle(for: type(of: self)).path(forResource: "bpi", ofType: ".json")
+        let data = FileManager.default.contents(atPath: path!)!
+        
+        let result: Response<BpiResponse> = BpiParser().parse(data: data)
+        
+        XCTAssertNotNil(result)
+        
+        switch result {
+        case .success(let object):
+            XCTAssertNotNil(object)
+            XCTAssertEqual(object.timestamp.description, "2018-07-22T16:14:00+00:00")
+            XCTAssertNotNil(object.bpi)
+            XCTAssertTrue(object.bpi.count > 0)
+            XCTAssertEqual(object.bpi[0].code, "USD")
+            XCTAssertEqual(object.bpi[0].rate.description, "7510.5863")
+        case .failure(let error):
+            XCTFail("Error: \(error)")
         }
     }
     
+    func testBpiHistoryParserCanParse() {
+        let path = Bundle(for: type(of: self)).path(forResource: "bpi_history", ofType: ".json")
+        let data = FileManager.default.contents(atPath: path!)!
+        
+        let result: Response<BpiHistoryResponse> = BpiParser().parse(data: data)
+        
+        XCTAssertNotNil(result)
+        
+        switch result {
+        case .success(let object):
+            XCTAssertNotNil(object)
+            XCTAssertEqual(object.timestamp.description, "2018-07-22T16:14:00+00:00")
+            XCTAssertNotNil(object.records)
+            XCTAssertTrue(object.records.count > 0)
+            XCTAssertEqual(object.records[0].date.description, "2018-07-22")
+            XCTAssertEqual(object.records[0].value.description, "7510.5863")
+        case .failure(let error):
+            XCTFail("Error: \(error)")
+        }
+    }
+    
+    func testBpiHistoryParserThrowErrorOnInvalidJson() {
+        let path = Bundle(for: type(of: self)).path(forResource: "invalid", ofType: ".json")
+        let data = FileManager.default.contents(atPath: path!)!
+        
+        let result: Response<BpiHistoryResponse> = BpiParser().parse(data: data)
+        
+        XCTAssertNotNil(result)
+        
+        switch result {
+        case .success:
+            XCTFail("Error: Should throw the error")
+        case .failure(let error):
+            if case CoilDeskProviderError.parsingError = error {
+                 XCTAssert(true)
+            } else {
+                XCTFail("Wrong error")
+            }
+        }
+    }
+    
+    func testBpiParserThrowErrorOnInvalidJson() {
+        let path = Bundle(for: type(of: self)).path(forResource: "invalid", ofType: ".json")
+        let data = FileManager.default.contents(atPath: path!)!
+        
+        let result: Response<BpiResponse> = BpiParser().parse(data: data)
+        
+        XCTAssertNotNil(result)
+        
+        switch result {
+        case .success:
+            XCTFail("Error: Should throw the error")
+        case .failure(let error):
+            if case CoilDeskProviderError.parsingError = error {
+                XCTAssert(true)
+            } else {
+                XCTFail("Wrong error")
+            }
+        }
+    }
 }

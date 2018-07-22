@@ -1,0 +1,15 @@
+
+{
+    "bpi": {
+        "2017-09-01": 4173.6334,
+        "2017-09-02": 3915.0335,
+        "2017-09-03": 3899.1183,
+        "2017-09-04": 3630.9547,
+        "2017-09-05": 3711.7473
+    },
+    "disclaimer": "This data was produced from the CoinDesk Bitcoin Price Index. BPI value data returned as EUR.",
+    "time": {
+        "updated": "Sep 6, 2017 00:03:00 UTC",
+        "updatedISO": "2017-09-06T00:03:00+00:00"
+    }
+}
