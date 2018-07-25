@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		405E55392108A82200B2622B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 405E553B2108A82200B2622B /* Localizable.strings */; };
+		405E55472108CA4C00B2622B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405E55462108CA3500B2622B /* Main.storyboard */; };
+		405E55482108CA5000B2622B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405E55452108CA3500B2622B /* LaunchScreen.storyboard */; };
 		40648E202104E27E00351752 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40648E1F2104E27E00351752 /* AppDelegate.swift */; };
 		40648E222104E27E00351752 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40648E212104E27E00351752 /* ViewController.swift */; };
-		40648E252104E27E00351752 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40648E232104E27E00351752 /* Main.storyboard */; };
 		40648E272104E28300351752 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40648E262104E28300351752 /* Assets.xcassets */; };
-		40648E2A2104E28300351752 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40648E282104E28300351752 /* LaunchScreen.storyboard */; };
 		40648E352104E28300351752 /* CoinDeskAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40648E342104E28300351752 /* CoinDeskAppTests.swift */; };
 		40648E412104E2D200351752 /* CoinDeskProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40648E402104E2D200351752 /* CoinDeskProvider.framework */; };
 /* End PBXBuildFile section */
@@ -27,12 +28,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		405E55452108CA3500B2622B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		405E55462108CA3500B2622B /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		405E55492108CA5800B2622B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		40648E1C2104E27E00351752 /* CoinDeskApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinDeskApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40648E1F2104E27E00351752 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40648E212104E27E00351752 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		40648E242104E27E00351752 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		40648E262104E28300351752 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		40648E292104E28300351752 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40648E2B2104E28300351752 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40648E302104E28300351752 /* CoinDeskAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinDeskAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40648E342104E28300351752 /* CoinDeskAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDeskAppTests.swift; sourceTree = "<group>"; };
@@ -59,6 +61,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		405E55302108A6B400B2622B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				40648E262104E28300351752 /* Assets.xcassets */,
+				405E55452108CA3500B2622B /* LaunchScreen.storyboard */,
+				405E55462108CA3500B2622B /* Main.storyboard */,
+				405E553B2108A82200B2622B /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		40648E132104E27E00351752 = {
 			isa = PBXGroup;
 			children = (
@@ -81,11 +94,9 @@
 		40648E1E2104E27E00351752 /* CoinDeskApp */ = {
 			isa = PBXGroup;
 			children = (
+				405E55302108A6B400B2622B /* Resources */,
 				40648E1F2104E27E00351752 /* AppDelegate.swift */,
 				40648E212104E27E00351752 /* ViewController.swift */,
-				40648E232104E27E00351752 /* Main.storyboard */,
-				40648E262104E28300351752 /* Assets.xcassets */,
-				40648E282104E28300351752 /* LaunchScreen.storyboard */,
 				40648E2B2104E28300351752 /* Info.plist */,
 			);
 			path = CoinDeskApp;
@@ -189,9 +200,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40648E2A2104E28300351752 /* LaunchScreen.storyboard in Resources */,
+				405E55472108CA4C00B2622B /* Main.storyboard in Resources */,
+				405E55482108CA5000B2622B /* LaunchScreen.storyboard in Resources */,
 				40648E272104E28300351752 /* Assets.xcassets in Resources */,
-				40648E252104E27E00351752 /* Main.storyboard in Resources */,
+				405E55392108A82200B2622B /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,20 +245,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		40648E232104E27E00351752 /* Main.storyboard */ = {
+		405E553B2108A82200B2622B /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				40648E242104E27E00351752 /* Base */,
+				405E55492108CA5800B2622B /* Base */,
 			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		40648E282104E28300351752 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				40648E292104E28300351752 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
