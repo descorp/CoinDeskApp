@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		405E553F2108AA2300B2622B /* SecureURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405E553E2108AA2300B2622B /* SecureURLSession.swift */; };
 		405E55432108BDAB00B2622B /* CertificatePiningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405E55422108BDAB00B2622B /* CertificatePiningTests.swift */; };
+		405E55442108C65D00B2622B /* ssl819232.cloudflaressl.com.cer in Resources */ = {isa = PBXBuildFile; fileRef = 405E55412108BB8900B2622B /* ssl819232.cloudflaressl.com.cer */; };
 		40648E022104E23F00351752 /* CoinDeskProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40648DF82104E23F00351752 /* CoinDeskProvider.framework */; };
 		40648E072104E23F00351752 /* CoinDeskProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40648E062104E23F00351752 /* CoinDeskProviderTests.swift */; };
 		40648E092104E23F00351752 /* CoinDeskProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 40648DFB2104E23F00351752 /* CoinDeskProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		405E553E2108AA2300B2622B /* SecureURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureURLSession.swift; sourceTree = "<group>"; };
+		405E55412108BB8900B2622B /* ssl819232.cloudflaressl.com.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl819232.cloudflaressl.com.cer; sourceTree = "<group>"; };
 		405E55422108BDAB00B2622B /* CertificatePiningTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificatePiningTests.swift; sourceTree = "<group>"; };
 		40648DF82104E23F00351752 /* CoinDeskProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoinDeskProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40648DFB2104E23F00351752 /* CoinDeskProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoinDeskProvider.h; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 			children = (
 				40648E542104EFB700351752 /* Request.swift */,
 				40648E582104F48B00351752 /* DateExtansion.swift */,
+				405E553E2108AA2300B2622B /* SecureURLSession.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				405E55442108C65D00B2622B /* ssl819232.cloudflaressl.com.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +309,7 @@
 				40648E6B21051E8400351752 /* Time.swift in Sources */,
 				40648E552104EFB700351752 /* Request.swift in Sources */,
 				40648E6E21051E8400351752 /* BipServerResponce.swift in Sources */,
+				405E553F2108AA2300B2622B /* SecureURLSession.swift in Sources */,
 				40648E442104E3F300351752 /* BitcoinPriceIndex.swift in Sources */,
 				40648E71210524A000351752 /* BPIHistoryServerResponse.swift in Sources */,
 				40648E5D2104FE0300351752 /* BpiHistoryParser.swift in Sources */,
