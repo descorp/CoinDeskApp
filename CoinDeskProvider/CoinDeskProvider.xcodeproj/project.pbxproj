@@ -174,7 +174,7 @@
 		40648E532104EF9A00351752 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				40648E542104EFB700351752 /* Request.swift */,
+				40648E542104EFB700351752 /* API.swift */,
 				40648E582104F48B00351752 /* DateExtansion.swift */,
 				405E553E2108AA2300B2622B /* SecureURLSession.swift */,
 			);
@@ -307,7 +307,7 @@
 				40648E462104E51D00351752 /* BpiResponse.swift in Sources */,
 				40648E5B2104FDEF00351752 /* BpiParser.swift in Sources */,
 				40648E6B21051E8400351752 /* Time.swift in Sources */,
-				40648E552104EFB700351752 /* Request.swift in Sources */,
+				40648E552104EFB700351752 /* API.swift in Sources */,
 				40648E6E21051E8400351752 /* BipServerResponce.swift in Sources */,
 				405E553F2108AA2300B2622B /* SecureURLSession.swift in Sources */,
 				40648E442104E3F300351752 /* BitcoinPriceIndex.swift in Sources */,

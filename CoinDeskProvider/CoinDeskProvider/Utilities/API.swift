@@ -13,7 +13,6 @@ public enum CoilDeskProviderError : Error {
     case parsingError
     case incorrectData
     
-    
     var localizedDescription: String {
         switch self {
         case .incorrectResponce:
@@ -28,6 +27,10 @@ public enum CoilDeskProviderError : Error {
 
 enum API {
     
+    private static let sessionSecurity = SecureURLSession()
+    private static let session = URLSession(configuration: URLSessionConfiguration.default,
+                                            delegate: sessionSecurity,
+                                            delegateQueue: nil)
     private static let coinDeskUrl = URL(string:"https://api.coindesk.com/v1/bpi")!
     
     case getBpi(currency: String?)
@@ -35,7 +38,7 @@ enum API {
     
     func request<T: Codable>(callback: @escaping (Response<T>) -> Void) {
         let url = API.coinDeskUrl.appendingPathComponent(self.path)
-        URLSession.shared.dataTask(with: url, completionHandler: { (data, responce, error) in
+        API.session.dataTask(with: url) { (data, responce, error) in
             if let error = error {
                 callback(.failure(error))
                 return
@@ -50,7 +53,7 @@ enum API {
             
             let result: Response<T> = self.parse(data: data)
             callback(result)
-        })
+        }.resume()
     }
     
     var path: String {
