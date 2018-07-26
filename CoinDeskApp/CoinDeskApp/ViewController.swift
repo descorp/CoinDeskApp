@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.renderer = OfflineModeView.initialize(container: self.view)
+        self.renderer = LoadingView.initialize(container: self.view)
     }
 
 }
