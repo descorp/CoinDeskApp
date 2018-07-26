@@ -1,5 +1,5 @@
 //
-//  BitcoinPriceIndex.swift
+//  BitcoinPriceIndexHistoryRecord.swift
 //  CoinDeskProvider
 //
 //  Created by Vladimir Abramichev on 22/07/2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct BitcoinPriceIndex : Codable {
-    let code: String
-    let rate: Decimal
+public struct PriceIndexHistoryRecord : Codable {
+    public let date: Date
+    public let value: Decimal
 }

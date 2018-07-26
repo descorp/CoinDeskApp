@@ -12,5 +12,3 @@ public struct BpiResponse<T: Codable> : Codable {
     let timestamp: Date
     let bpi: [T]
 }
-
-
