@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import Common
 
 class BpiParser {    
-    func parse(data: Data) -> Response<BitcoinPriceIndex> {
+    func parse(data: Data) -> Response<PriceIndex> {
         guard
             let raw = try? JSONDecoder().decode(BipServerResponse.self, from: data)
         else {
@@ -22,12 +23,19 @@ class BpiParser {
             return .failure(CoilDeskProviderError.incorrectData)
         }
         
-        let collection = raw.bpi.values.map({ (item) -> BitcoinPriceIndex in
+        let collection = raw.bpi.values.map({ (item) -> PriceIndex in
             let value = Decimal(string: item.rate.replacingOccurrences(of: ",", with: ""))!
-            return BitcoinPriceIndex(code: item.code, rate: value)
+            return PriceIndex(code: item.code, rate: value)
         })
         let result = BpiResponse(timestamp: timestamp, bpi: collection)
         
         return .success(result: result)
+    }
+}
+
+extension PriceIndex {
+    init(code: String, rate: Decimal) {
+        self.code = code
+        self.rate = rate
     }
 }

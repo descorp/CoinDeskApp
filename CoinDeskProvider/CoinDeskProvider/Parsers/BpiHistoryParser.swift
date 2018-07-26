@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import Common
 
 class BpiHistoryParser {
     
-    func parse(data: Data) -> Response<BitcoinPriceIndexHistoryRecord> {
+    func parse(data: Data) -> Response<PriceIndexHistoryRecord> {
         guard
             let raw = try? JSONDecoder().decode(BPIHistoryServerResponse.self, from: data)
             else {
@@ -23,11 +24,18 @@ class BpiHistoryParser {
                 return .failure(CoilDeskProviderError.incorrectData)
         }
         
-        let collection = raw.bpi.map({ (key, item) -> BitcoinPriceIndexHistoryRecord in
+        let collection = raw.bpi.map({ (key, item) -> PriceIndexHistoryRecord in
             let value = Decimal(10000*item) / 10000
-            return BitcoinPriceIndexHistoryRecord(date: Date(dateString: key)!, value: value)
+            return PriceIndexHistoryRecord(date: Date(dateString: key)!, value: value)
         })
         let result = BpiResponse(timestamp: timestamp, bpi: collection)
         return .success(result: result)
+    }
+}
+
+extension PriceIndexHistoryRecord {
+    init(date: Date, value: Decimal) {
+        self.date = date
+        self.value = value
     }
 }

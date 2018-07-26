@@ -25,7 +25,7 @@ public enum CoilDeskProviderError : Error {
     }
 }
 
-enum API {
+public enum API {
     
     private static let sessionSecurity = SecureURLSession()
     private static let session = URLSession(configuration: URLSessionConfiguration.default,
@@ -36,7 +36,7 @@ enum API {
     case getBpi(currency: String?)
     case getHistory(from: Date, to: Date, currency: String?)
     
-    func request<T: Codable>(callback: @escaping (Response<T>) -> Void) {
+    public func request<T: Codable>(callback: @escaping (Response<T>) -> Void) {
         let url = API.coinDeskUrl.appendingPathComponent(self.path)
         API.session.dataTask(with: url) { (data, responce, error) in
             if let error = error {

@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Common
 @testable import CoinDeskProvider
 
 class ParsersTests: XCTestCase {
@@ -15,7 +16,7 @@ class ParsersTests: XCTestCase {
         let path = Bundle(for: type(of: self)).path(forResource: "bpi", ofType: ".json")
         let data = FileManager.default.contents(atPath: path!)!
         
-        let result: Response<BitcoinPriceIndex> = BpiParser().parse(data: data)
+        let result: Response<PriceIndex> = BpiParser().parse(data: data)
         
         XCTAssertNotNil(result)
         
@@ -36,7 +37,7 @@ class ParsersTests: XCTestCase {
         let path = Bundle(for: type(of: self)).path(forResource: "bpi_history", ofType: ".json")
         let data = FileManager.default.contents(atPath: path!)!
         
-        let result: Response<BitcoinPriceIndexHistoryRecord> = BpiHistoryParser().parse(data: data)
+        let result: Response<PriceIndexHistoryRecord> = BpiHistoryParser().parse(data: data)
         
         XCTAssertNotNil(result)
         
@@ -57,7 +58,7 @@ class ParsersTests: XCTestCase {
         let path = Bundle(for: type(of: self)).path(forResource: "invalid", ofType: ".json")
         let data = FileManager.default.contents(atPath: path!)!
         
-        let result: Response<BitcoinPriceIndexHistoryRecord> = BpiHistoryParser().parse(data: data)
+        let result: Response<PriceIndexHistoryRecord> = BpiHistoryParser().parse(data: data)
         
         XCTAssertNotNil(result)
         
@@ -77,7 +78,7 @@ class ParsersTests: XCTestCase {
         let path = Bundle(for: type(of: self)).path(forResource: "invalid", ofType: ".json")
         let data = FileManager.default.contents(atPath: path!)!
         
-        let result: Response<BitcoinPriceIndex> = BpiParser().parse(data: data)
+        let result: Response<PriceIndex> = BpiParser().parse(data: data)
         
         XCTAssertNotNil(result)
         
