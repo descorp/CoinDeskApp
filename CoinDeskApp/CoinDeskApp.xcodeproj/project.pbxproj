@@ -12,6 +12,9 @@
 		405E40CD2109B26000EB57F2 /* Synchronizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405E40CC2109B26000EB57F2 /* Synchronizer.swift */; };
 		405E40CF2109B7EC00EB57F2 /* CoinDeskDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405E40CE2109B7EC00EB57F2 /* CoinDeskDataProvider.swift */; };
 		405E41022109EC3100EB57F2 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 405E41012109EC3100EB57F2 /* Common.framework */; };
+		405E410B210A62C400EB57F2 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405E410A210A62C400EB57F2 /* Renderer.swift */; };
+		405E410D210A644800EB57F2 /* OfflineModeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 405E410C210A644800EB57F2 /* OfflineModeView.xib */; };
+		405E410F210A645400EB57F2 /* OfflineModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405E410E210A645400EB57F2 /* OfflineModeView.swift */; };
 		405E55392108A82200B2622B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 405E553B2108A82200B2622B /* Localizable.strings */; };
 		405E55472108CA4C00B2622B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405E55462108CA3500B2622B /* Main.storyboard */; };
 		405E55482108CA5000B2622B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405E55452108CA3500B2622B /* LaunchScreen.storyboard */; };
@@ -38,6 +41,9 @@
 		405E40CC2109B26000EB57F2 /* Synchronizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synchronizer.swift; sourceTree = "<group>"; };
 		405E40CE2109B7EC00EB57F2 /* CoinDeskDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDeskDataProvider.swift; sourceTree = "<group>"; };
 		405E41012109EC3100EB57F2 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		405E410A210A62C400EB57F2 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		405E410C210A644800EB57F2 /* OfflineModeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfflineModeView.xib; sourceTree = "<group>"; };
+		405E410E210A645400EB57F2 /* OfflineModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineModeView.swift; sourceTree = "<group>"; };
 		405E55452108CA3500B2622B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		405E55462108CA3500B2622B /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		405E55492108CA5800B2622B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -82,6 +88,23 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		405E4108210A5ED600EB57F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				405E410C210A644800EB57F2 /* OfflineModeView.xib */,
+				405E410E210A645400EB57F2 /* OfflineModeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		405E4109210A628F00EB57F2 /* Abstract */ = {
+			isa = PBXGroup;
+			children = (
+				405E410A210A62C400EB57F2 /* Renderer.swift */,
+			);
+			path = Abstract;
+			sourceTree = "<group>";
+		};
 		405E55302108A6B400B2622B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +138,8 @@
 		40648E1E2104E27E00351752 /* CoinDeskApp */ = {
 			isa = PBXGroup;
 			children = (
+				405E4109210A628F00EB57F2 /* Abstract */,
+				405E4108210A5ED600EB57F2 /* Views */,
 				405E40C72109B03C00EB57F2 /* Services */,
 				405E55302108A6B400B2622B /* Resources */,
 				40648E1F2104E27E00351752 /* AppDelegate.swift */,
@@ -226,6 +251,7 @@
 			files = (
 				405E55472108CA4C00B2622B /* Main.storyboard in Resources */,
 				405E55482108CA5000B2622B /* LaunchScreen.storyboard in Resources */,
+				405E410D210A644800EB57F2 /* OfflineModeView.xib in Resources */,
 				40648E272104E28300351752 /* Assets.xcassets in Resources */,
 				405E55392108A82200B2622B /* Localizable.strings in Resources */,
 			);
@@ -247,6 +273,8 @@
 			files = (
 				405E40CD2109B26000EB57F2 /* Synchronizer.swift in Sources */,
 				405E40C92109B05C00EB57F2 /* Dependency.swift in Sources */,
+				405E410B210A62C400EB57F2 /* Renderer.swift in Sources */,
+				405E410F210A645400EB57F2 /* OfflineModeView.swift in Sources */,
 				405E40CF2109B7EC00EB57F2 /* CoinDeskDataProvider.swift in Sources */,
 				405E40CB2109B09F00EB57F2 /* CacheStorage.swift in Sources */,
 				40648E222104E27E00351752 /* ViewController.swift in Sources */,
