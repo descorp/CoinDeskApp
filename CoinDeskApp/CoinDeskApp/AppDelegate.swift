@@ -8,10 +8,11 @@
 
 import UIKit
 
-struct AppDependency: Dependency, HasCoinDeskDataProvider, HasCacheStorage, HasSynchronizer {
-    let dataProvider: CoinDeskDataProvider
+struct AppDependency: Dependency, HasIndexDataProvider, HasCacheStorage, HasSynchronizer {
+    
     let cache: CacheStorage
     let synchronizer: Synchronizer
+    let indexDataProvider: IndexDataProvider
 }
 
 @UIApplicationMain
@@ -20,7 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        configure(dependency: AppDependency())
+        let cache = CacheStorageService()
+        let syncService = SyncService()
+        let indexDataProvider = CoinDeskService(synchronizer: syncService, cache: cache)
+        configure(dependency: AppDependency(cache: cache,
+                                            synchronizer: syncService,
+                                            indexDataProvider: indexDataProvider))
         // Override point for customization after application launch.
         return true
     }

@@ -37,4 +37,30 @@ protocol CacheStorage {
     /// - Parameter id: object id.
     /// - Returns: optional object.
     func object<T: Codable>(withId id: String) -> T?
+    
+    /// Delete all objects in store. _O(1)_
+    func deleteAll()
+}
+
+class CacheStorageService: CacheStorage {
+    
+    func save<T>(_ object: T, key: String) throws where T : Decodable, T : Encodable {
+        
+    }
+    
+    func save<T>(_ optionalObject: T?, key: String) throws where T : Decodable, T : Encodable {
+        
+    }
+    
+    func save<T>(_ objects: [T], key: String) throws where T : Decodable, T : Encodable {
+        
+    }
+    
+    func object<T>(withId id: String) -> T? where T : Decodable, T : Encodable {
+        return nil
+    }
+    
+    func deleteAll() {
+        
+    }
 }

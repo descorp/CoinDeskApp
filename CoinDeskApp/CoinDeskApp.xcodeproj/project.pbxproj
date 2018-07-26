@@ -11,6 +11,7 @@
 		405E40CB2109B09F00EB57F2 /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405E40CA2109B09F00EB57F2 /* CacheStorage.swift */; };
 		405E40CD2109B26000EB57F2 /* Synchronizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405E40CC2109B26000EB57F2 /* Synchronizer.swift */; };
 		405E40CF2109B7EC00EB57F2 /* CoinDeskDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405E40CE2109B7EC00EB57F2 /* CoinDeskDataProvider.swift */; };
+		405E41022109EC3100EB57F2 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 405E41012109EC3100EB57F2 /* Common.framework */; };
 		405E55392108A82200B2622B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 405E553B2108A82200B2622B /* Localizable.strings */; };
 		405E55472108CA4C00B2622B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405E55462108CA3500B2622B /* Main.storyboard */; };
 		405E55482108CA5000B2622B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405E55452108CA3500B2622B /* LaunchScreen.storyboard */; };
@@ -36,6 +37,7 @@
 		405E40CA2109B09F00EB57F2 /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStorage.swift; sourceTree = "<group>"; };
 		405E40CC2109B26000EB57F2 /* Synchronizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synchronizer.swift; sourceTree = "<group>"; };
 		405E40CE2109B7EC00EB57F2 /* CoinDeskDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDeskDataProvider.swift; sourceTree = "<group>"; };
+		405E41012109EC3100EB57F2 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		405E55452108CA3500B2622B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		405E55462108CA3500B2622B /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		405E55492108CA5800B2622B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				405E41022109EC3100EB57F2 /* Common.framework in Frameworks */,
 				40648E412104E2D200351752 /* CoinDeskProvider.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +137,7 @@
 		40648E3F2104E2D200351752 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				405E41012109EC3100EB57F2 /* Common.framework */,
 				40648E402104E2D200351752 /* CoinDeskProvider.framework */,
 			);
 			name = Frameworks;

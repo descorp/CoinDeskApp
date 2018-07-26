@@ -13,11 +13,11 @@ protocol HasSynchronizer {
 }
 
 /// Triggers on Syncronizer tick
-protocol SynchronizerDelegate {
+protocol SynchronizerDelegate: class {
     func onTick()
 }
 
-protocol Synchronizer {
+protocol Synchronizer: class {
     
     /// Initiate syncronizer
     ///
@@ -28,5 +28,18 @@ protocol Synchronizer {
     func stop()
     
     /// Delegate to trigger syncronisation
-    var delegate: SynchronizerDelegate { get set }
+    var delegate: SynchronizerDelegate? { get set }
+}
+
+class SyncService: Synchronizer {
+    
+    func start(interval: TimeInterval) {
+        
+    }
+    
+    func stop() {
+        
+    }
+    
+    public weak var  delegate: SynchronizerDelegate?
 }
