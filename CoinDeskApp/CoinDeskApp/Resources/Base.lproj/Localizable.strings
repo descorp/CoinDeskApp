@@ -5,3 +5,8 @@
   Created by Vladimir Abramichev on 25/07/2018.
   Copyright © 2018 Vladimir Abramichev. All rights reserved.
 */
+
+"state.error.offline.title" = "Offline";
+"state.error.offline.subtitle" = "Check your retwork connection";
+"state.loading.title" = "Loading in proccess..";
+"bitcoinindex.title" = "Bitcoin Index ($@)";

@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		405E40C92109B05C00EB57F2 /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405E40C82109B05C00EB57F2 /* Dependency.swift */; };
+		40387DBB210C7E0C00D2E2CF /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40387DBA210C7E0C00D2E2CF /* Coordinator.swift */; };
+		40387DBD210CBE4C00D2E2CF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40387DBC210CBE4C00D2E2CF /* AppCoordinator.swift */; };
+		40387DC2210CF01000D2E2CF /* BitcoinIndexCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40387DC1210CF01000D2E2CF /* BitcoinIndexCoordinator.swift */; };
+		40387DC4210D038400D2E2CF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40387DC3210D038400D2E2CF /* BaseViewController.swift */; };
 		405E40CB2109B09F00EB57F2 /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405E40CA2109B09F00EB57F2 /* CacheStorage.swift */; };
 		405E40CD2109B26000EB57F2 /* Synchronizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405E40CC2109B26000EB57F2 /* Synchronizer.swift */; };
 		405E40CF2109B7EC00EB57F2 /* CoinDeskDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405E40CE2109B7EC00EB57F2 /* CoinDeskDataProvider.swift */; };
@@ -17,11 +20,12 @@
 		405E410F210A645400EB57F2 /* OfflineModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405E410E210A645400EB57F2 /* OfflineModeView.swift */; };
 		405E4111210A697800EB57F2 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 405E4110210A697800EB57F2 /* LoadingView.xib */; };
 		405E4113210A698600EB57F2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405E4112210A698600EB57F2 /* LoadingView.swift */; };
+		405E4115210BBF5100EB57F2 /* IndexHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 405E4114210BBF5100EB57F2 /* IndexHeaderView.xib */; };
+		405E4117210BBF5C00EB57F2 /* IndexHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405E4116210BBF5C00EB57F2 /* IndexHeaderView.swift */; };
 		405E55392108A82200B2622B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 405E553B2108A82200B2622B /* Localizable.strings */; };
-		405E55472108CA4C00B2622B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405E55462108CA3500B2622B /* Main.storyboard */; };
 		405E55482108CA5000B2622B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405E55452108CA3500B2622B /* LaunchScreen.storyboard */; };
 		40648E202104E27E00351752 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40648E1F2104E27E00351752 /* AppDelegate.swift */; };
-		40648E222104E27E00351752 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40648E212104E27E00351752 /* ViewController.swift */; };
+		40648E222104E27E00351752 /* BitcoinIndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40648E212104E27E00351752 /* BitcoinIndexViewController.swift */; };
 		40648E272104E28300351752 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40648E262104E28300351752 /* Assets.xcassets */; };
 		40648E352104E28300351752 /* CoinDeskAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40648E342104E28300351752 /* CoinDeskAppTests.swift */; };
 		40648E412104E2D200351752 /* CoinDeskProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40648E402104E2D200351752 /* CoinDeskProvider.framework */; };
@@ -38,7 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		405E40C82109B05C00EB57F2 /* Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependency.swift; sourceTree = "<group>"; };
+		40387DBA210C7E0C00D2E2CF /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		40387DBC210CBE4C00D2E2CF /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		40387DC1210CF01000D2E2CF /* BitcoinIndexCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinIndexCoordinator.swift; sourceTree = "<group>"; };
+		40387DC3210D038400D2E2CF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		405E40CA2109B09F00EB57F2 /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStorage.swift; sourceTree = "<group>"; };
 		405E40CC2109B26000EB57F2 /* Synchronizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synchronizer.swift; sourceTree = "<group>"; };
 		405E40CE2109B7EC00EB57F2 /* CoinDeskDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDeskDataProvider.swift; sourceTree = "<group>"; };
@@ -48,12 +55,13 @@
 		405E410E210A645400EB57F2 /* OfflineModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineModeView.swift; sourceTree = "<group>"; };
 		405E4110210A697800EB57F2 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		405E4112210A698600EB57F2 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		405E4114210BBF5100EB57F2 /* IndexHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndexHeaderView.xib; sourceTree = "<group>"; };
+		405E4116210BBF5C00EB57F2 /* IndexHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexHeaderView.swift; sourceTree = "<group>"; };
 		405E55452108CA3500B2622B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		405E55462108CA3500B2622B /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		405E55492108CA5800B2622B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		40648E1C2104E27E00351752 /* CoinDeskApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinDeskApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40648E1F2104E27E00351752 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		40648E212104E27E00351752 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		40648E212104E27E00351752 /* BitcoinIndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinIndexViewController.swift; sourceTree = "<group>"; };
 		40648E262104E28300351752 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40648E2B2104E28300351752 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40648E302104E28300351752 /* CoinDeskAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinDeskAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +90,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40387DB9210C7DF900D2E2CF /* FlowCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				40387DBC210CBE4C00D2E2CF /* AppCoordinator.swift */,
+				40387DC1210CF01000D2E2CF /* BitcoinIndexCoordinator.swift */,
+			);
+			path = FlowCoordinator;
+			sourceTree = "<group>";
+		};
+		40387DBE210CEEB300D2E2CF /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				40387DBF210CEEBF00D2E2CF /* BitcoinIndex */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		40387DBF210CEEBF00D2E2CF /* BitcoinIndex */ = {
+			isa = PBXGroup;
+			children = (
+				405E4108210A5ED600EB57F2 /* Views */,
+				40648E212104E27E00351752 /* BitcoinIndexViewController.swift */,
+			);
+			path = BitcoinIndex;
+			sourceTree = "<group>";
+		};
 		405E40C72109B03C00EB57F2 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,10 +129,13 @@
 		405E4108210A5ED600EB57F2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				405E4118210BCA2300EB57F2 /* Cells */,
 				405E410C210A644800EB57F2 /* OfflineModeView.xib */,
 				405E410E210A645400EB57F2 /* OfflineModeView.swift */,
 				405E4110210A697800EB57F2 /* LoadingView.xib */,
 				405E4112210A698600EB57F2 /* LoadingView.swift */,
+				405E4114210BBF5100EB57F2 /* IndexHeaderView.xib */,
+				405E4116210BBF5C00EB57F2 /* IndexHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -106,9 +143,18 @@
 		405E4109210A628F00EB57F2 /* Abstract */ = {
 			isa = PBXGroup;
 			children = (
+				40387DBA210C7E0C00D2E2CF /* Coordinator.swift */,
 				405E410A210A62C400EB57F2 /* Renderer.swift */,
+				40387DC3210D038400D2E2CF /* BaseViewController.swift */,
 			);
 			path = Abstract;
+			sourceTree = "<group>";
+		};
+		405E4118210BCA2300EB57F2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		405E55302108A6B400B2622B /* Resources */ = {
@@ -116,7 +162,6 @@
 			children = (
 				40648E262104E28300351752 /* Assets.xcassets */,
 				405E55452108CA3500B2622B /* LaunchScreen.storyboard */,
-				405E55462108CA3500B2622B /* Main.storyboard */,
 				405E553B2108A82200B2622B /* Localizable.strings */,
 			);
 			path = Resources;
@@ -144,13 +189,12 @@
 		40648E1E2104E27E00351752 /* CoinDeskApp */ = {
 			isa = PBXGroup;
 			children = (
+				40387DBE210CEEB300D2E2CF /* Scenes */,
+				40387DB9210C7DF900D2E2CF /* FlowCoordinator */,
 				405E4109210A628F00EB57F2 /* Abstract */,
-				405E4108210A5ED600EB57F2 /* Views */,
 				405E40C72109B03C00EB57F2 /* Services */,
 				405E55302108A6B400B2622B /* Resources */,
 				40648E1F2104E27E00351752 /* AppDelegate.swift */,
-				40648E212104E27E00351752 /* ViewController.swift */,
-				405E40C82109B05C00EB57F2 /* Dependency.swift */,
 				40648E2B2104E28300351752 /* Info.plist */,
 			);
 			path = CoinDeskApp;
@@ -255,11 +299,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				405E55472108CA4C00B2622B /* Main.storyboard in Resources */,
 				405E55482108CA5000B2622B /* LaunchScreen.storyboard in Resources */,
 				405E410D210A644800EB57F2 /* OfflineModeView.xib in Resources */,
 				405E4111210A697800EB57F2 /* LoadingView.xib in Resources */,
 				40648E272104E28300351752 /* Assets.xcassets in Resources */,
+				405E4115210BBF5100EB57F2 /* IndexHeaderView.xib in Resources */,
 				405E55392108A82200B2622B /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,13 +322,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40387DC4210D038400D2E2CF /* BaseViewController.swift in Sources */,
+				40387DBD210CBE4C00D2E2CF /* AppCoordinator.swift in Sources */,
 				405E40CD2109B26000EB57F2 /* Synchronizer.swift in Sources */,
-				405E40C92109B05C00EB57F2 /* Dependency.swift in Sources */,
+				405E4117210BBF5C00EB57F2 /* IndexHeaderView.swift in Sources */,
+				40387DBB210C7E0C00D2E2CF /* Coordinator.swift in Sources */,
+				40387DC2210CF01000D2E2CF /* BitcoinIndexCoordinator.swift in Sources */,
 				405E410B210A62C400EB57F2 /* Renderer.swift in Sources */,
 				405E410F210A645400EB57F2 /* OfflineModeView.swift in Sources */,
 				405E40CF2109B7EC00EB57F2 /* CoinDeskDataProvider.swift in Sources */,
 				405E40CB2109B09F00EB57F2 /* CacheStorage.swift in Sources */,
-				40648E222104E27E00351752 /* ViewController.swift in Sources */,
+				40648E222104E27E00351752 /* BitcoinIndexViewController.swift in Sources */,
 				40648E202104E27E00351752 /* AppDelegate.swift in Sources */,
 				405E4113210A698600EB57F2 /* LoadingView.swift in Sources */,
 			);

@@ -11,4 +11,9 @@ import UIKit
 
 class LoadingView: Renderer {
     
+    @IBOutlet weak var label: UILabel!
+    
+    override func setup() {
+        label.text = NSLocalizedString("state.loading.title", comment: "")
+    }
 }
