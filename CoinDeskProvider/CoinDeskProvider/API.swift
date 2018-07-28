@@ -73,8 +73,8 @@ public enum API {
         switch self {
         case .getBpi:
             return BpiParser().parse(data: data) as! Response<T>
-        case .getHistory:
-            return BpiHistoryParser().parse(data: data) as! Response<T>
+        case let .getHistory(_,_,code):
+            return BpiHistoryParser(currency: code).parse(data: data) as! Response<T>
         }
     }
 }

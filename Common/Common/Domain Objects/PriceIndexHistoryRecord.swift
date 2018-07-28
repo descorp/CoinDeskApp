@@ -10,5 +10,5 @@ import Foundation
 
 public struct PriceIndexHistoryRecord : Codable {
     public let date: Date
-    public let value: Decimal
+    public let value: PriceIndex
 }
