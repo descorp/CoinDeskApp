@@ -9,6 +9,6 @@
 import Foundation
 
 public struct BpiResponse<T: Codable> : Codable {
-    let timestamp: Date
-    let bpi: [T]
+    public let timestamp: Date
+    public let bpi: [T]
 }

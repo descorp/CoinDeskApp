@@ -9,4 +9,4 @@
 "state.error.offline.title" = "Offline";
 "state.error.offline.subtitle" = "Check your retwork connection";
 "state.loading.title" = "Loading in proccess..";
-"bitcoinindex.title" = "Bitcoin Index ($@)";
+"state.bitcoinindex.title" = "Bitcoin Index (%@)";

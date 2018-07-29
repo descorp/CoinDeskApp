@@ -11,6 +11,10 @@
 		40387DBD210CBE4C00D2E2CF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40387DBC210CBE4C00D2E2CF /* AppCoordinator.swift */; };
 		40387DC2210CF01000D2E2CF /* BitcoinIndexCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40387DC1210CF01000D2E2CF /* BitcoinIndexCoordinator.swift */; };
 		40387DC4210D038400D2E2CF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40387DC3210D038400D2E2CF /* BaseViewController.swift */; };
+		40387DC6210DAC6000D2E2CF /* BitcoinIndexBaseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40387DC5210DAC6000D2E2CF /* BitcoinIndexBaseView.xib */; };
+		40387DC8210DAD5400D2E2CF /* BitcoinIndexBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40387DC7210DAD5400D2E2CF /* BitcoinIndexBaseView.swift */; };
+		40387DCA210DC5F500D2E2CF /* IndexBodyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40387DC9210DC5F500D2E2CF /* IndexBodyView.xib */; };
+		40387DCC210DC61B00D2E2CF /* IndexBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40387DCB210DC61B00D2E2CF /* IndexBodyView.swift */; };
 		405E40CB2109B09F00EB57F2 /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405E40CA2109B09F00EB57F2 /* CacheStorage.swift */; };
 		405E40CD2109B26000EB57F2 /* Synchronizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405E40CC2109B26000EB57F2 /* Synchronizer.swift */; };
 		405E40CF2109B7EC00EB57F2 /* CoinDeskDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405E40CE2109B7EC00EB57F2 /* CoinDeskDataProvider.swift */; };
@@ -46,6 +50,10 @@
 		40387DBC210CBE4C00D2E2CF /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		40387DC1210CF01000D2E2CF /* BitcoinIndexCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinIndexCoordinator.swift; sourceTree = "<group>"; };
 		40387DC3210D038400D2E2CF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		40387DC5210DAC6000D2E2CF /* BitcoinIndexBaseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BitcoinIndexBaseView.xib; sourceTree = "<group>"; };
+		40387DC7210DAD5400D2E2CF /* BitcoinIndexBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinIndexBaseView.swift; sourceTree = "<group>"; };
+		40387DC9210DC5F500D2E2CF /* IndexBodyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndexBodyView.xib; sourceTree = "<group>"; };
+		40387DCB210DC61B00D2E2CF /* IndexBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexBodyView.swift; sourceTree = "<group>"; };
 		405E40CA2109B09F00EB57F2 /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStorage.swift; sourceTree = "<group>"; };
 		405E40CC2109B26000EB57F2 /* Synchronizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synchronizer.swift; sourceTree = "<group>"; };
 		405E40CE2109B7EC00EB57F2 /* CoinDeskDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDeskDataProvider.swift; sourceTree = "<group>"; };
@@ -136,6 +144,10 @@
 				405E4112210A698600EB57F2 /* LoadingView.swift */,
 				405E4114210BBF5100EB57F2 /* IndexHeaderView.xib */,
 				405E4116210BBF5C00EB57F2 /* IndexHeaderView.swift */,
+				40387DC9210DC5F500D2E2CF /* IndexBodyView.xib */,
+				40387DCB210DC61B00D2E2CF /* IndexBodyView.swift */,
+				40387DC5210DAC6000D2E2CF /* BitcoinIndexBaseView.xib */,
+				40387DC7210DAD5400D2E2CF /* BitcoinIndexBaseView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -302,7 +314,9 @@
 				405E55482108CA5000B2622B /* LaunchScreen.storyboard in Resources */,
 				405E410D210A644800EB57F2 /* OfflineModeView.xib in Resources */,
 				405E4111210A697800EB57F2 /* LoadingView.xib in Resources */,
+				40387DCA210DC5F500D2E2CF /* IndexBodyView.xib in Resources */,
 				40648E272104E28300351752 /* Assets.xcassets in Resources */,
+				40387DC6210DAC6000D2E2CF /* BitcoinIndexBaseView.xib in Resources */,
 				405E4115210BBF5100EB57F2 /* IndexHeaderView.xib in Resources */,
 				405E55392108A82200B2622B /* Localizable.strings in Resources */,
 			);
@@ -324,6 +338,7 @@
 			files = (
 				40387DC4210D038400D2E2CF /* BaseViewController.swift in Sources */,
 				40387DBD210CBE4C00D2E2CF /* AppCoordinator.swift in Sources */,
+				40387DCC210DC61B00D2E2CF /* IndexBodyView.swift in Sources */,
 				405E40CD2109B26000EB57F2 /* Synchronizer.swift in Sources */,
 				405E4117210BBF5C00EB57F2 /* IndexHeaderView.swift in Sources */,
 				40387DBB210C7E0C00D2E2CF /* Coordinator.swift in Sources */,
@@ -333,6 +348,7 @@
 				405E40CF2109B7EC00EB57F2 /* CoinDeskDataProvider.swift in Sources */,
 				405E40CB2109B09F00EB57F2 /* CacheStorage.swift in Sources */,
 				40648E222104E27E00351752 /* BitcoinIndexViewController.swift in Sources */,
+				40387DC8210DAD5400D2E2CF /* BitcoinIndexBaseView.swift in Sources */,
 				40648E202104E27E00351752 /* AppDelegate.swift in Sources */,
 				405E4113210A698600EB57F2 /* LoadingView.swift in Sources */,
 			);

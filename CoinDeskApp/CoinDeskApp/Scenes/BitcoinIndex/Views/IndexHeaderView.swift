@@ -16,8 +16,8 @@ class IndexHeaderView: Renderer {
     @IBOutlet weak var timestampLabel: UILabel!
     
     public func updateWith(index: PriceIndex, timestamp: Date) {
-        titleLabel.text = String(format: NSLocalizedString("state.bitcoinindex.title", comment: ""), index.code.capitalized)
+        titleLabel.text = String(format: NSLocalizedString("state.bitcoinindex.title", comment: ""),
+                                 index.code.uppercased())
         valueTitle.text = index.rate.description
-        
     }
 }

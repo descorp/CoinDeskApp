@@ -8,14 +8,14 @@
 
 import UIKit
 import CoinDeskProvider
+import Common
 
 class BitcoinIndexViewController: BaseViewController {
     
     typealias Dependency = HasIndexDataProvider
     
     let dependency: Dependency
-    
-    var renderer: UIView?
+    let currency = "EUR"
     
     init(dependency: Dependency) {        
         self.dependency = dependency
@@ -30,26 +30,58 @@ class BitcoinIndexViewController: BaseViewController {
         super.viewDidLoad()
         let _ = self.render(type: LoadingView.self, in: self.view)
         
-        self.dependency.indexDataProvider.getIndex { [weak self] result in
+        var indexData: (index: [PriceIndex]?, timestamp: Date?, error: Error?)?
+        var indexHistoryData: (history: [PriceIndexHistoryRecord]?, timestamp: Date?, error: Error?)?
+        
+        let taskGroup = DispatchGroup()
+        taskGroup.enter()
+        self.dependency.indexDataProvider.getIndex(currency: currency) { result in
+            switch result {
+            case .data(let index, let timestamp):
+                indexData = (index, timestamp, nil)
+            case .error(let error):
+                indexData = (nil, nil, error)
+            }
+            taskGroup.leave()
+        }
+        
+        taskGroup.enter()
+        let from = Date()
+        let to = Date()
+        self.dependency.indexDataProvider.getIndexHistory(from: from, to: to, currency: currency) { result in
+            switch result {
+            case .data(let history, let timestamp):
+                indexHistoryData = (history, timestamp, nil)
+            case .error(let error):
+                indexHistoryData = (nil, nil, error)
+            }
+            taskGroup.leave()
+        }
+        
+        taskGroup.notify(queue: DispatchQueue.main) { [weak self] in
             guard
                 let localSelf = self
             else { return }
             
-            switch result {
-            case .data(let index, let timestamp):
-                guard
-                    let header = IndexHeaderView.initialize(container: localSelf.view) as? IndexHeaderView
-                else { return }
-                
-                header.updateWith(index: index, timestamp: timestamp)
-                localSelf.renderer = header
-            case .noData:
-                localSelf.renderer = OfflineModeView.initialize(container: localSelf.view)
-            case .error(_):
-                localSelf.renderer = OfflineModeView.initialize(container: localSelf.view)
+            guard
+                let index = indexData?.index,
+                let indexTimestamp = indexData?.timestamp,
+                let history = indexHistoryData?.history,
+                let historyTimestamp = indexHistoryData?.timestamp
+            else {
+                let _ = localSelf.render(type: OfflineModeView.self, in: localSelf.view)
                 return
             }
+            
+            let base = localSelf.render(type: BitcoinIndexBaseView.self, in: localSelf.view)
+            let header = localSelf.render(type: IndexHeaderView.self, in: base.headerContainer)
+            header.updateWith(index: index[1], timestamp: indexTimestamp)
+            
+            let body = localSelf.render(type: IndexBodyView.self, in: base.bodyContainer)
+            body.updateWith(index: history, timestamp: historyTimestamp)
         }
+        
+
     }
 
 }
