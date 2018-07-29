@@ -78,7 +78,7 @@ class BitcoinIndexViewController: BaseViewController {
             header.updateWith(index: index[1], timestamp: indexTimestamp)
             
             let body = localSelf.render(type: IndexBodyView.self, in: base.bodyContainer)
-            body.updateWith(index: history, timestamp: historyTimestamp)
+            body.updateWith(records: history, timestamp: historyTimestamp)
         }
         
 

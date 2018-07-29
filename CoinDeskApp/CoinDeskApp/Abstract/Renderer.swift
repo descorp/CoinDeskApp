@@ -21,8 +21,12 @@ class Renderer: UIView {
             return nil
         }
         
-        view.frame = container.frame
         container.addSubview(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        let bindings = ["view": view]
+        container.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options:[], metrics:nil, views: bindings))
+        container.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options:[], metrics:nil, views: bindings))
+        
         view.setup()
         return view;
     }

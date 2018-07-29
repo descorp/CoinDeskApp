@@ -19,8 +19,8 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nTF-Qx-mVE">
                     <rect key="frame" x="0.0" y="20" width="390" height="492"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="HvY-1U-oAc">
-                            <rect key="frame" x="5" y="5" width="380" height="286"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="HvY-1U-oAc">
+                            <rect key="frame" x="5" y="5" width="380" height="546"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Kc-87-YR0">
                                     <rect key="frame" x="0.0" y="0.0" width="380" height="140"/>
@@ -30,7 +30,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="BRZ-no-9wc">
-                                    <rect key="frame" x="0.0" y="146" width="380" height="140"/>
+                                    <rect key="frame" x="0.0" y="146" width="380" height="400"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                             </subviews>

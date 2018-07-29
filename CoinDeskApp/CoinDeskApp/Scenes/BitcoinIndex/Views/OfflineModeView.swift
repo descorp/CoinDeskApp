@@ -14,7 +14,7 @@ class OfflineModeView : Renderer {
     @IBOutlet weak var subtitleLabel: UILabel!
  
     override func setup() {
-        titleLabel.text = NSLocalizedString("state.error.offline.title", comment: "")
-        subtitleLabel.text = NSLocalizedString("state.error.offline.subtitle", comment: "")
+        titleLabel.text = String.localize(key:"state.error.offline.title")
+        subtitleLabel.text = String.localize(key:"state.error.offline.subtitle")
     }
 }

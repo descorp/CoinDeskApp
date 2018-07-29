@@ -8,5 +8,8 @@
 
 "state.error.offline.title" = "Offline";
 "state.error.offline.subtitle" = "Check your retwork connection";
-"state.loading.title" = "Loading in proccess..";
-"state.bitcoinindex.title" = "Bitcoin Index (%@)";
+"state.loading.title" = "Loading..";
+"state.loading.pullToRefresh.title" = "Pull to refresh";
+"scene.bitcoinindex.title" = "Bitcoin Index (%@)";
+"scene.bitcoinindex.footer" = "Powered by CoinDesk";
+"scene.bitcoinindex.pullToRefresh.title" = "Pull to refresh";

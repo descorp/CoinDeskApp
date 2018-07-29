@@ -18,7 +18,6 @@ class BitcoinIndexBaseView : Renderer {
     @IBOutlet weak var scrollView: UIScrollView!
     
     override func setup() {
-        
         setupScrollView()
         setupHeader()
         setupBody()
@@ -46,7 +45,7 @@ class BitcoinIndexBaseView : Renderer {
     fileprivate func setupFooter() {
         footerLabel.isEditable = false
         footerLabel.dataDetectorTypes = .link
-        let footer = NSMutableAttributedString(string: "Powered by CoinDesk")
+        let footer = NSMutableAttributedString(string: String.localize(key: "scene.bitcoinindex.footer"))
         footer.addAttribute(.link,
                             value: "https://www.coindesk.com/price/",
                             range: NSRange(location: footer.length - 8, length: 8) )
@@ -55,7 +54,7 @@ class BitcoinIndexBaseView : Renderer {
     
     fileprivate func setupScrollView() {
         let pullToRefresh = UIRefreshControl()
-        pullToRefresh.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        pullToRefresh.attributedTitle = NSAttributedString(string: String.localize(key: "scene.bitcoinindex.pullToRefresh.title"))
         pullToRefresh.addTarget(self, action: #selector(refreshDidTriggered(control:)), for: UIControlEvents.valueChanged)
         self.scrollView.insertSubview(pullToRefresh, at: 0)
     }
