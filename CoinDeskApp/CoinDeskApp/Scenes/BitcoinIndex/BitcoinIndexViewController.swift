@@ -47,7 +47,7 @@ class BitcoinIndexViewController: BaseViewController {
         }
         
         taskGroup.enter()
-        let from = Date()
+        let from = Date().dateAgo(week: -2)
         let to = Date()
         self.dependency.indexDataProvider.getIndexHistory(from: from, to: to, currency: currency) { result in
             switch result {

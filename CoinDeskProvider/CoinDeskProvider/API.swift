@@ -37,7 +37,7 @@ public enum API {
     case getHistory(from: Date, to: Date, currency: String?)
     
     public func request<T: Codable>(callback: @escaping (Response<T>) -> Void) {
-        let url = API.coinDeskUrl.appendingPathComponent(self.path)
+        let url = self.path
         API.session.dataTask(with: url) { (data, responce, error) in
             if let error = error {
                 callback(.failure(error))
@@ -56,16 +56,19 @@ public enum API {
         }.resume()
     }
     
-    var path: String {
+    var path: URL {
         switch self {
         case .getBpi(nil):
-            return "currentprice"
+            return API.coinDeskUrl.appendingPathComponent("currentprice")
         case let .getBpi(currency):
-            return "currentprice/\(currency!)"
-        case let .getHistory(from, to, nil):
-            return "historical/close.json?start=\(from.isoDateString)&end=\(to.isoDateString)"
+            return API.coinDeskUrl.appendingPathComponent("currentprice/\(currency!)")
         case let .getHistory(from, to, currency):
-            return "historical/close.json?start=\(from.isoDateString)&end=\(to.isoDateString)&currency=\(currency!)"
+            var components = URLComponents(string: API.coinDeskUrl.appendingPathComponent("historical/close.json").absoluteString)
+            components?.queryItems = [URLQueryItem(name: "start", value: from.isoDateString),
+                                      URLQueryItem(name: "end", value: to.isoDateString),
+                                      URLQueryItem(name: "currency", value: currency)]
+            
+            return components!.url!
         }
     }
     
