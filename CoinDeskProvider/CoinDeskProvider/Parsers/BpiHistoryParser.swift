@@ -35,7 +35,9 @@ class BpiHistoryParser {
         }
         
         let collection = raw.bpi.map({ (key, item) -> PriceIndexHistoryRecord in
-            let value = Decimal(10000*item) / 10000
+            let floatPart = Int((10000*item).truncatingRemainder(dividingBy: 10000))
+            let integerPart = Int(item.rounded())
+            let value = "\(integerPart).\(floatPart)"
             return PriceIndexHistoryRecord(date: Date(dateString: key)!, value: value, code: currency)
         })
         let result = BpiResponse(timestamp: timestamp, bpi: collection)
@@ -44,7 +46,7 @@ class BpiHistoryParser {
 }
 
 extension PriceIndexHistoryRecord {
-    init(date: Date, value: Decimal, code: String) {
+    init(date: Date, value: String, code: String) {
         self.date = date
         self.value = PriceIndex(code: code, rate: value)
     }

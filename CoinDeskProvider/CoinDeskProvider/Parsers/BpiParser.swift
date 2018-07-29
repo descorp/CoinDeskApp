@@ -24,7 +24,7 @@ class BpiParser {
         }
         
         let collection = raw.bpi.values.map({ (item) -> PriceIndex in
-            let value = Decimal(string: item.rate.replacingOccurrences(of: ",", with: ""))!
+            let value = item.rate.replacingOccurrences(of: ",", with: "")
             return PriceIndex(code: item.code, rate: value)
         })
         let result = BpiResponse(timestamp: timestamp, bpi: collection)
@@ -34,7 +34,7 @@ class BpiParser {
 }
 
 extension PriceIndex {
-    init(code: String, rate: Decimal) {
+    init(code: String, rate: String) {
         self.code = code
         self.rate = rate
     }

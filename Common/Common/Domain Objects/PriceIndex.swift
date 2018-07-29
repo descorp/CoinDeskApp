@@ -10,5 +10,5 @@ import Foundation
 
 public struct PriceIndex : Codable {
     public let code: String
-    public let rate: Decimal
+    public let rate: String
 }

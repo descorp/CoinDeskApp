@@ -37,9 +37,7 @@ class BitcoinIndexBaseView : Renderer {
     }
     
     fileprivate func setupBody() {
-        bodyContainer.layer.cornerRadius = 5
-        bodyContainer.layer.borderColor = UIColor.lightGray.cgColor
-        bodyContainer.layer.borderWidth = 1.0
+        
     }
 
     fileprivate func setupFooter() {

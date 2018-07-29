@@ -13,7 +13,7 @@ import UIKit
 class PriceIndexHistoryRecordCellView: UITableViewCell {
     
     func updateWith(date: Date, value: PriceIndex) {
-        self.textLabel?.text = date.description
+        self.textLabel?.text = date.dateString
         self.detailTextLabel?.text = value.rate.description
     }
     

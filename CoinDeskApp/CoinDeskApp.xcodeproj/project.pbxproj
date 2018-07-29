@@ -19,6 +19,7 @@
 		40387DD5210E5B0700D2E2CF /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40387DD4210E5B0700D2E2CF /* StringExtensions.swift */; };
 		40387DD7210E5D5400D2E2CF /* PriceIndexHistoryRecordCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40387DD6210E5D5400D2E2CF /* PriceIndexHistoryRecordCellView.xib */; };
 		40387DD9210E5D7500D2E2CF /* PriceIndexHistoryRecordCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40387DD8210E5D7500D2E2CF /* PriceIndexHistoryRecordCellView.swift */; };
+		40387DDB210E6B9500D2E2CF /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40387DDA210E6B9500D2E2CF /* DateExtensions.swift */; };
 		405E40CB2109B09F00EB57F2 /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405E40CA2109B09F00EB57F2 /* CacheStorage.swift */; };
 		405E40CD2109B26000EB57F2 /* Synchronizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405E40CC2109B26000EB57F2 /* Synchronizer.swift */; };
 		405E40CF2109B7EC00EB57F2 /* CoinDeskDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405E40CE2109B7EC00EB57F2 /* CoinDeskDataProvider.swift */; };
@@ -62,6 +63,7 @@
 		40387DD4210E5B0700D2E2CF /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		40387DD6210E5D5400D2E2CF /* PriceIndexHistoryRecordCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceIndexHistoryRecordCellView.xib; sourceTree = "<group>"; };
 		40387DD8210E5D7500D2E2CF /* PriceIndexHistoryRecordCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceIndexHistoryRecordCellView.swift; sourceTree = "<group>"; };
+		40387DDA210E6B9500D2E2CF /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		405E40CA2109B09F00EB57F2 /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStorage.swift; sourceTree = "<group>"; };
 		405E40CC2109B26000EB57F2 /* Synchronizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synchronizer.swift; sourceTree = "<group>"; };
 		405E40CE2109B7EC00EB57F2 /* CoinDeskDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDeskDataProvider.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			children = (
 				40387DD2210E59E600D2E2CF /* TableViewExtensions.swift */,
 				40387DD4210E5B0700D2E2CF /* StringExtensions.swift */,
+				40387DDA210E6B9500D2E2CF /* DateExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				405E40CD2109B26000EB57F2 /* Synchronizer.swift in Sources */,
 				405E4117210BBF5C00EB57F2 /* IndexHeaderView.swift in Sources */,
 				40387DBB210C7E0C00D2E2CF /* Coordinator.swift in Sources */,
+				40387DDB210E6B9500D2E2CF /* DateExtensions.swift in Sources */,
 				40387DC2210CF01000D2E2CF /* BitcoinIndexCoordinator.swift in Sources */,
 				40387DD9210E5D7500D2E2CF /* PriceIndexHistoryRecordCellView.swift in Sources */,
 				405E410B210A62C400EB57F2 /* Renderer.swift in Sources */,

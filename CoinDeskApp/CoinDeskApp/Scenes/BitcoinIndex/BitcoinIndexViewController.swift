@@ -28,6 +28,7 @@ class BitcoinIndexViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Bitcoin"
         let _ = self.render(type: LoadingView.self, in: self.view)
         
         var indexData: (index: [PriceIndex]?, timestamp: Date?, error: Error?)?

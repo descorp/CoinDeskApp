@@ -18,12 +18,14 @@ class IndexBodyView: Renderer {
     @IBOutlet weak var tableHeightConstraint: NSLayoutConstraint!
     
     override func setup() {
-        self.tableView.registerClass(type: PriceIndexHistoryRecordCellView.self)
+        self.tableView.registerNib(type: PriceIndexHistoryRecordCellView.self)
         self.tableView.dataSource = self
     }
     
     public func updateWith(records: [PriceIndexHistoryRecord], timestamp: Date) {
-        self.data = records
+        self.data = records.sorted(by: { (lhs, rhs) -> Bool in
+            return lhs.date > rhs.date
+        })
         self.tableView.reloadData()
         self.invalidateIntrinsicContentSize()
         self.tableHeightConstraint.constant = self.tableView.rowHeight * CGFloat(data?.count ?? 0)
