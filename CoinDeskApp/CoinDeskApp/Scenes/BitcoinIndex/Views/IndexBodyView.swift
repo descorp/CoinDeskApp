@@ -28,7 +28,7 @@ class IndexBodyView: Renderer {
         })
         self.tableView.reloadData()
         self.invalidateIntrinsicContentSize()
-        self.tableHeightConstraint.constant = self.tableView.rowHeight * CGFloat(data?.count ?? 0)
+        self.layoutSubviews()
     }
     
     override var intrinsicContentSize: CGSize {

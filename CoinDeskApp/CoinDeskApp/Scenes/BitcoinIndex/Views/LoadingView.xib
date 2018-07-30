@@ -16,11 +16,12 @@
             <rect key="frame" x="0.0" y="0.0" width="353" height="350"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="8TB-q2-YL2">
-                    <rect key="frame" x="166.5" y="145" width="20" height="20"/>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="8TB-q2-YL2">
+                    <rect key="frame" x="158.5" y="127" width="37" height="37"/>
+                    <color key="color" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </activityIndicatorView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvS-Ad-llx">
-                    <rect key="frame" x="145.5" y="169.5" width="61" height="21"/>
+                    <rect key="frame" x="145.5" y="174.5" width="61" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -29,9 +30,9 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vvS-Ad-llx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6Hr-pL-ieh"/>
-                <constraint firstItem="8TB-q2-YL2" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-20" id="H6x-KS-kRf"/>
+                <constraint firstItem="8TB-q2-YL2" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-30" id="H6x-KS-kRf"/>
                 <constraint firstItem="8TB-q2-YL2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="V3U-wh-FJ9"/>
-                <constraint firstItem="vvS-Ad-llx" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="5" id="b7r-Uq-2gF"/>
+                <constraint firstItem="vvS-Ad-llx" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="10" id="b7r-Uq-2gF"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
