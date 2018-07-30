@@ -11,6 +11,12 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.isTranslucent = false
+    }
+    
     public func render<T:Renderer>(type: T.Type, in container:UIView, animate: Bool = false) -> T {
         return T.initialize(container: container) as! T
     }
