@@ -9,13 +9,21 @@
 import Foundation
 import UIKit
 
+protocol LoadingDelegate: class {
+    func reloadRequested()
+}
+
 class BitcoinIndexBaseView : Renderer {
+    
+    public weak var delegate: LoadingDelegate?
     
     @IBOutlet weak var headerContainer: UIView!
     @IBOutlet weak var bodyContainer: UIView!
     @IBOutlet weak var footerLabel: UITextView!
     
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    var pullToRefresh: UIRefreshControl!
     
     override func setup() {
         setupScrollView()
@@ -24,10 +32,25 @@ class BitcoinIndexBaseView : Renderer {
         setupFooter()
     }
     
-    @objc func refreshDidTriggered(control: UIRefreshControl) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            control.endRefreshing()
+    func loadDidStarted() {
+        self.pullToRefresh.beginRefreshing()
+    }
+    
+    func loadDidFinished() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            self?.pullToRefresh.endRefreshing()
         }
+    }
+    
+    @objc internal func refreshDidTriggered(control: UIRefreshControl) {
+        guard
+            let delegate = self.delegate
+        else {
+            self.loadDidFinished()
+            return
+        }
+        
+        delegate.reloadRequested()
     }
     
     fileprivate func setupHeader() {
@@ -51,7 +74,7 @@ class BitcoinIndexBaseView : Renderer {
     }
     
     fileprivate func setupScrollView() {
-        let pullToRefresh = UIRefreshControl()
+        self.pullToRefresh = UIRefreshControl()
         pullToRefresh.attributedTitle = NSAttributedString(string: String.localize(key: "scene.bitcoinindex.pullToRefresh.title"))
         pullToRefresh.addTarget(self, action: #selector(refreshDidTriggered(control:)), for: UIControlEvents.valueChanged)
         self.scrollView.insertSubview(pullToRefresh, at: 0)

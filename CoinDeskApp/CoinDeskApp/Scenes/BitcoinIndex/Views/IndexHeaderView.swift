@@ -19,5 +19,6 @@ class IndexHeaderView: Renderer {
         titleLabel.text = String(format: String.localize(key:"scene.bitcoinindex.title"),
                                  index.code.uppercased())
         valueTitle.text = index.rate.description
+        timestampLabel.text = timestamp.formar("YYYY-MM-dd hh:mm:ss")
     }
 }

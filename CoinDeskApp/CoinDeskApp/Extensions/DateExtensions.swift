@@ -10,9 +10,9 @@ import Foundation
 
 extension Date {
     
-    var dateString : String {
+    func formar(_ format: String) -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "YYYY-MM-dd"
+        formatter.dateFormat = format
         formatter.locale = Locale(identifier: "en_US_POSIX")
         
         return formatter.string(from: self)

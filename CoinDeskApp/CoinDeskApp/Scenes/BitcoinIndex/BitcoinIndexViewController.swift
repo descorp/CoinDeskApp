@@ -10,12 +10,13 @@ import UIKit
 import CoinDeskProvider
 import Common
 
-class BitcoinIndexViewController: BaseViewController {
+class BitcoinIndexViewController: BaseViewController, LoadingDelegate {
     
     typealias Dependency = HasIndexDataProvider
     
     let dependency: Dependency
     let currency = "EUR"
+    weak var baseView: BitcoinIndexBaseView?
     
     init(dependency: Dependency) {        
         self.dependency = dependency
@@ -30,7 +31,10 @@ class BitcoinIndexViewController: BaseViewController {
         super.viewDidLoad()
         self.title = "Bitcoin"
         let _ = self.render(type: LoadingView.self, in: self.view)
-        
+        reloadRequested()
+    }
+    
+    func reloadRequested() {
         var indexData: (index: [PriceIndex]?, timestamp: Date?, error: Error?)?
         var indexHistoryData: (history: [PriceIndexHistoryRecord]?, timestamp: Date?, error: Error?)?
         
@@ -64,26 +68,31 @@ class BitcoinIndexViewController: BaseViewController {
                 let localSelf = self
             else { return }
             
+            if localSelf.baseView == nil {
+                let base = localSelf.render(type: BitcoinIndexBaseView.self, in: localSelf.view)
+                base.delegate = localSelf
+                localSelf.baseView = base
+            }
+            
             guard
+                let base = localSelf.baseView,
                 let index = indexData?.index,
                 let indexTimestamp = indexData?.timestamp,
                 let history = indexHistoryData?.history,
                 let historyTimestamp = indexHistoryData?.timestamp
-            else {
-                let _ = localSelf.render(type: OfflineModeView.self, in: localSelf.view)
-                return
+                else {
+                    let _ = localSelf.render(type: OfflineModeView.self, in: localSelf.view)
+                    return
             }
             
-            let base = localSelf.render(type: BitcoinIndexBaseView.self, in: localSelf.view)
             let header = localSelf.render(type: IndexHeaderView.self, in: base.headerContainer)
             header.updateWith(index: index[1], timestamp: indexTimestamp)
             
             let body = localSelf.render(type: IndexBodyView.self, in: base.bodyContainer)
             body.updateWith(records: history, timestamp: historyTimestamp)
+            
+            base.loadDidFinished()
         }
-        
-
     }
-
 }
 
